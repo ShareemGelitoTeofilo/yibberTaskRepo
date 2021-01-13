@@ -1,5 +1,8 @@
 package com.example.yibbertask.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Feed {
     private String author;
     private String title;
@@ -45,5 +48,31 @@ public class Feed {
 
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public static List<Feed> createRecords() {
+        List<Feed> feeds = new ArrayList<>();
+        Feed feed = new Feed();
+        feed.setAuthor("Shareem G. Teofilo");
+        feed.setDuration("41:90");
+        feed.setTitle("Boracay Escapade");
+        feed.setUploadTime("1 min ago");
+        feed.setThumbnail("beach");
+        feeds.add(feed);
+        Feed nightBeachFeed = new Feed();
+        nightBeachFeed.setAuthor("Emmila Faith R. Guillen");
+        nightBeachFeed.setDuration("12:45");
+        nightBeachFeed.setTitle("Night Beach");
+        nightBeachFeed.setUploadTime("1 week ago");
+        nightBeachFeed.setThumbnail("nightbeach");
+        feeds.add(nightBeachFeed);
+        Feed surfFeed = new Feed();
+        surfFeed.setAuthor("Emmila Faith R. Guillen");
+        surfFeed.setDuration("23:45");
+        surfFeed.setTitle("Surfing");
+        surfFeed.setUploadTime("3 week ago");
+        surfFeed.setThumbnail("surf");
+        feeds.add(surfFeed);
+        return feeds;
     }
 }
