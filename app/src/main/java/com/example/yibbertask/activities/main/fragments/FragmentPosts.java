@@ -46,6 +46,13 @@ public class FragmentPosts extends Fragment {
         nightBeachFeed.setUploadTime("1 week ago");
         nightBeachFeed.setThumbnail("nightbeach");
         feeds.add(nightBeachFeed);
+        Feed surfFeed = new Feed();
+        surfFeed.setAuthor("Emmila Faith R. Guillen");
+        surfFeed.setDuration("23:45");
+        surfFeed.setTitle("Surfing");
+        surfFeed.setUploadTime("3 week ago");
+        surfFeed.setThumbnail("surf");
+        feeds.add(surfFeed);
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(feeds);
         recyclerView.setAdapter(adapter);
