@@ -162,11 +162,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/CustomTextAppearanceTab"
         android:background="@color/colorPrimary"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/colorAccent"
+        app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
-        app:tabTextColor="@color/colorText" />
+        app:tabTextColor="@color/colorTextSecondary"
+        app:tabSelectedTextColor="@color/colorText"
+        android:elevation="1dp"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

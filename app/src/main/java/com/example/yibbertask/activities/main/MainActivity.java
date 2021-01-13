@@ -12,6 +12,7 @@ import com.example.yibbertask.activities.main.fragments.FragmentShared;
 import com.example.yibbertask.activities.main.fragments.FragmentTagged;
 import com.example.yibbertask.activities.main.fragments.FragmentThreads;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         // adapter setup
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabIndicatorFullWidth(false);
         // update profile photo shape
         profileImageView.setClipToOutline(true);
     }
