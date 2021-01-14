@@ -210,8 +210,8 @@
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/colorAccent"
                     android:text="Audio Bio"
+                    android:letterSpacing="0"
                     android:textAllCaps="false"
-                    android:textStyle="bold"
                     app:icon="@drawable/baseline_play_arrow_white_18dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -219,9 +219,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Edit Profile"
+                    android:letterSpacing="0"
                     android:textAllCaps="false"
                     android:textColor="@color/colorText"
-                    android:textStyle="bold"
                     app:icon="@drawable/baseline_edit_black_18dp"
                     app:iconTint="@null" />
             </LinearLayout>
