@@ -42,6 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Context context = holder.thumbnail.getContext();
         int thumbnailId = context.getResources().getIdentifier(feed.getThumbnailName(), "drawable", context.getPackageName());
         holder.thumbnail.setImageResource(thumbnailId);
+        holder.thumbnail.setClipToOutline(true);
 
         holder.title.setText(feed.getTitle());
         holder.uploadTime.setText(feed.getUploadTime());
@@ -105,6 +106,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             durationStatus = itemView.findViewById(R.id.durationStatusText);
             progressBar = itemView.findViewById(R.id.my_progressBar);
             playButton = itemView.findViewById(R.id.playButton);
+
+            thumbnail.setClipToOutline(true);
         }
     }
 }

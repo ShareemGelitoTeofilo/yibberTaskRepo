@@ -4,123 +4,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center">
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@drawable/shadow_card_view"
+    android:layout_marginBottom="5dp">
+    <ImageView
+        android:background="@drawable/thumbnail_background"
+        android:outlineProvider="background"
+        android:src="@drawable/beach"
+        android:id="@+id/feedThumbnailImageView"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardElevation="2dp"
-        app:cardBackgroundColor="#fff"
-        app:cardForegroundColor="@android:color/transparent">
-        <LinearLayout
+        android:orientation="vertical">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="100dp"
+            android:paddingVertical="8dp"
+            android:paddingStart="22dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/imageView"
+                android:text="Boracay Escapade"
+                android:textStyle="bold" />
+
             <ImageView
-                android:id="@+id/feedThumbnailImageView"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/beach"
-                android:scaleType="centerCrop"/>
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/overflow_menu_icon_black" />
+
+            <TextView
+                android:id="@+id/authorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleText"
+                android:text="Shareem G. Teofilo"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_below="@id/authorText"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:paddingVertical="8dp"
-                    android:paddingStart="22dp"
-                    android:paddingEnd="10dp">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/playButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:backgroundTint="@color/colorAccent"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/baseline_play_arrow_white_18dp"
+                    app:tint="#fff" />
 
-                    <TextView
-                        android:id="@+id/titleText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/imageView"
-                        android:text="Boracay Escapade"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/uploadTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="17 minute ago"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp" />
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/overflow_menu_icon_black" />
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    app:srcCompat="@drawable/dot_icon_white"
+                    app:tint="@color/colorTextSecondary" />
 
-                    <TextView
-                        android:id="@+id/authorText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/titleText"
-                        android:text="Shareem G. Teofilo"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="12sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/authorText"
-                        android:layout_alignParentBottom="true"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/playButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="2dp"
-                            android:backgroundTint="@color/colorAccent"
-                            app:fabSize="mini"
-                            app:srcCompat="@drawable/baseline_play_arrow_white_18dp"
-                            app:tint="#fff" />
-
-                        <TextView
-                            android:id="@+id/uploadTimeText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="3dp"
-                            android:text="17 minute ago"
-                            android:textColor="@color/colorTextSecondary"
-                            android:textSize="12sp" />
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            app:srcCompat="@drawable/dot_icon_white"
-                            app:tint="@color/colorTextSecondary" />
-
-                        <TextView
-                            android:id="@+id/durationStatusText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="18:15 left"
-                            android:textColor="@color/colorTextSecondary"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                </RelativeLayout>
-                <!--<com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/playProgressBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginBottom="-5dp"
-                    android:max="100"
-                    android:progress="10"/>-->
-                <ProgressBar
-                    android:id="@+id/my_progressBar"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:indeterminate="false"
-                    android:max="300"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:visibility="invisible"/>
+                <TextView
+                    android:id="@+id/durationStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="18:15 left"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp" />
             </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+        <!--<com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/playProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginBottom="-5dp"
+            android:max="100"
+            android:progress="10"/>-->
+        <ProgressBar
+            android:id="@+id/my_progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:indeterminate="false"
+            android:max="300"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:visibility="invisible"/>
+    </LinearLayout>
 </LinearLayout>
