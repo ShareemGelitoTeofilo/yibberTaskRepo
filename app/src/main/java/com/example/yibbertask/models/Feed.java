@@ -53,21 +53,21 @@ public class Feed {
     public static List<Feed> createRecords() {
         List<Feed> feeds = new ArrayList<>();
         Feed feed = new Feed();
-        feed.setAuthor("Shareem G. Teofilo");
+        feed.setAuthor("shareemteofilo");
         feed.setDuration("41:90");
         feed.setTitle("Boracay Escapade");
         feed.setUploadTime("1 min ago");
         feed.setThumbnail("beach");
         feeds.add(feed);
         Feed nightBeachFeed = new Feed();
-        nightBeachFeed.setAuthor("Emmila Faith R. Guillen");
+        nightBeachFeed.setAuthor("shareemteofilo");
         nightBeachFeed.setDuration("12:45");
         nightBeachFeed.setTitle("Night Beach");
         nightBeachFeed.setUploadTime("1 week ago");
         nightBeachFeed.setThumbnail("nightbeach");
         feeds.add(nightBeachFeed);
         Feed surfFeed = new Feed();
-        surfFeed.setAuthor("Emmila Faith R. Guillen");
+        surfFeed.setAuthor("shareemteofilo");
         surfFeed.setDuration("23:45");
         surfFeed.setTitle("Surfing");
         surfFeed.setUploadTime("3 week ago");
