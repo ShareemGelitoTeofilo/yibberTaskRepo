@@ -39,6 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:gravity="center"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/imageView2"
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -50,6 +51,10 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_expand_more_black_18dp"/>
                 </LinearLayout>
 
                 <ImageView
