@@ -36,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        Feed feed = feeds.get(position);
+        final Feed feed = feeds.get(position);
 
         // Set thumbnail
         Context context = holder.thumbnail.getContext();
@@ -47,7 +47,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.title.setText(feed.getTitle());
         holder.uploadTime.setText(feed.getUploadTime());
         holder.author.setText(feed.getAuthor());
-        holder.durationStatus.setText(feed.getDuration());
+        holder.durationStatus.setText(convertTimeToText(feed.getDurationInSec() - holder.progress));
+        holder.progressBar.setMax((int) feed.getDurationInSec());
 
         final Handler handler = new Handler();
 
@@ -58,18 +59,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 holder.playing = !holder.playing;
                 new Thread(new Runnable() {
                     public void run() {
-                        while (holder.progress < 300 && holder.playing) {
-                            holder.progress += 2;
+                        while (holder.progress < feed.getDurationInSec() && holder.playing) {
+                            holder.progress += 1;
                             // Update the progress bar and display the
                             //current value in the text view
                             handler.post(new Runnable() {
                                 public void run() {
-                                    holder.progressBar.setProgress(holder.progress);
+                                    holder.progressBar.setProgress((int) holder.progress);
+                                    holder.durationStatus.setText(convertTimeToText(feed.getDurationInSec() - holder.progress));
                                 }
                             });
                             try {
                                 // Sleep for 200 milliseconds.
-                                Thread.sleep(50);
+                                Thread.sleep(1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -91,7 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        int progress;
+        long progress = 0;
         boolean playing = false;
         TextView title, author, uploadTime, durationStatus;
         ImageView thumbnail;
@@ -109,5 +111,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             thumbnail.setClipToOutline(true);
         }
+    }
+
+    private String convertTimeToText(long timeInSec) {
+        long remainder = 0;
+        long minutes = timeInSec / 60;
+        remainder = timeInSec - (minutes * 60);
+        long seconds = remainder;
+        String minutesString = minutes > 9 ? String.valueOf(minutes) : String.format("0%s", minutes);
+        String secondsString = seconds > 9 ? String.valueOf(seconds) : String.format("0%s", seconds);
+        return String.format("%s:%s", minutesString, secondsString);
     }
 }

@@ -8,6 +8,7 @@ public class Feed {
     private String title;
     private String uploadTime;
     private String duration;
+    private long durationInSec;
     private String thumbnail;
 
     public String getAuthor() {
@@ -34,14 +35,6 @@ public class Feed {
         this.uploadTime = uploadTime;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     public String getThumbnailName() {
         return thumbnail;
     }
@@ -50,29 +43,38 @@ public class Feed {
         this.thumbnail = thumbnail;
     }
 
+
     public static List<Feed> createRecords() {
         List<Feed> feeds = new ArrayList<>();
         Feed feed = new Feed();
         feed.setAuthor("shareemteofilo");
-        feed.setDuration("41:90");
+        feed.setDurationInSec(95);
         feed.setTitle("Boracay Escapade");
         feed.setUploadTime("1 min ago");
         feed.setThumbnail("beach");
         feeds.add(feed);
         Feed nightBeachFeed = new Feed();
         nightBeachFeed.setAuthor("shareemteofilo");
-        nightBeachFeed.setDuration("12:45");
+        nightBeachFeed.setDurationInSec(300);
         nightBeachFeed.setTitle("Night Beach");
         nightBeachFeed.setUploadTime("1 week ago");
         nightBeachFeed.setThumbnail("nightbeach");
         feeds.add(nightBeachFeed);
         Feed surfFeed = new Feed();
         surfFeed.setAuthor("shareemteofilo");
-        surfFeed.setDuration("23:45");
+        surfFeed.setDurationInSec(165);
         surfFeed.setTitle("Surfing");
         surfFeed.setUploadTime("3 week ago");
         surfFeed.setThumbnail("surf");
         feeds.add(surfFeed);
         return feeds;
+    }
+
+    public long getDurationInSec() {
+        return durationInSec;
+    }
+
+    public void setDurationInSec(long durationInSec) {
+        this.durationInSec = durationInSec;
     }
 }
