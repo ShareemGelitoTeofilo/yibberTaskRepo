@@ -49,7 +49,7 @@
                         android:layout_height="match_parent"
                         android:text="shareemteofilo"
                         android:gravity="center"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/helvetica_bol"
                         android:textSize="16sp"/>
                     <ImageView
                         android:layout_width="wrap_content"
@@ -104,15 +104,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Shareem G. Teofilo"
-                android:textStyle="bold" />
+                android:fontFamily="@font/helvetica_bol"/>
 
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="Software Engineer"
-                android:textSize="14sp" />
+                android:text="Software Engineer"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="53"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/helvetica_bol"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -151,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="5,789"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/helvetica_bol"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -171,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="1,193"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/helvetica_bol"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -191,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="19"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/helvetica_bol"/>
 
                     <TextView
                         android:layout_width="match_parent"
